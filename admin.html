@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin - Shubhaam X MD</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+  <main class="admin-container">
+    <h1>Admin Panel</h1>
+    <div id="login-area">
+      <label>Enter Admin Password:</label>
+      <input id="admin-pass" type="password" placeholder="Password" />
+      <button id="login-btn" class="btn">Login</button>
+      <p class="muted">Password is <strong>SHUBHAM777</strong></p>
+    </div>
+
+    <div id="admin-area" style="display:none">
+      <section class="admin-section">
+        <h2>Plugins</h2>
+        <div id="admin-plugins" class="cards"></div>
+        <h3>Add Plugin</h3>
+        <input id="p-name" placeholder="Plugin name" />
+        <input id="p-about" placeholder="About" />
+        <input id="p-link" placeholder="Hidden link (will be copied)" />
+        <button id="add-plugin" class="btn">Add Plugin</button>
+      </section>
+
+      <section class="admin-section">
+        <h2>Env</h2>
+        <div id="admin-env" class="cards"></div>
+        <h3>Add Env</h3>
+        <input id="e-name" placeholder="Env name" />
+        <textarea id="e-values" placeholder="Comma separated values, e.g: VAL1=abc,VAL2=xyz"></textarea>
+        <button id="add-env" class="btn">Add Env</button>
+      </section>
+
+      <section class="admin-section">
+        <h2>Free Tools</h2>
+        <div id="admin-tools" class="cards"></div>
+        <h3>Add Tool</h3>
+        <input id="t-name" placeholder="Tool name" />
+        <textarea id="t-data" placeholder="Tool data or text"></textarea>
+        <button id="add-tool" class="btn">Add Tool</button>
+      </section>
+
+      <button id="logout" class="btn danger">Logout</button>
+    </div>
+
+  </main>
+
+  <textarea id="hidden-copy-admin" style="position:fixed;left:-9999px;top:-9999px"></textarea>
+
+  <script>
+    const SUPABASE_URL = 'https://YOUR_SUPABASE_URL.supabase.co' // replace
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY' // replace
+    const supabase = supabaseJs.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  </script>
+  <script src="assets/script.js"></script>
+</body>
+</html>
