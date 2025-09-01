@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shubhaam X MD</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <!-- Supabase client v2 - CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Shubhaam X MD</h1>
+  </header>
+
+  <main class="container">
+    <section id="home" class="page active">
+      <div class="grid-2x2">
+        <button class="card-btn" data-page="plugins">Plugin</button>
+        <button class="card-btn" data-page="env">Env</button>
+        <button class="card-btn" id="get-session">Get Session</button>
+        <button class="card-btn" data-page="panelcode">Panel Code</button>
+        <button class="card-btn" data-page="tools">Free Tools</button>
+        <button class="card-btn" data-page="admin-login">Admin Login</button>
+      </div>
+    </section>
+
+    <!-- Plugins page -->
+    <section id="plugins" class="page">
+      <h2>Plugins</h2>
+      <div id="plugins-list" class="cards"></div>
+      <button class="btn back">Back</button>
+    </section>
+
+    <!-- Env page -->
+    <section id="env" class="page">
+      <h2>Env</h2>
+      <div id="env-list" class="cards"></div>
+      <button class="btn back">Back</button>
+    </section>
+
+    <!-- Panel Code page -->
+    <section id="panelcode" class="page">
+      <h2>Panel Code</h2>
+      <p>Copy This Code & paste your panel, replace ur Session Id with <code>updateThis</code></p>
+      <pre id="panel-code" class="code-block"></pre>
+      <button id="copy-panel-code" class="btn">Copy Hidden Code</button>
+      <button class="btn back">Back</button>
+    </section>
+
+    <!-- Tools page -->
+    <section id="tools" class="page">
+      <h2>Free Tools</h2>
+      <div id="tools-list" class="cards"></div>
+      <button class="btn back">Back</button>
+    </section>
+
+    <!-- Admin login quick link page (links to admin.html) -->
+    <section id="admin-login" class="page">
+      <h2>Admin Login</h2>
+      <p>Click below to open admin panel. Password: <strong>SHUBHAM777</strong></p>
+      <a class="btn" href="admin.html" target="_blank">Open Admin Panel</a>
+      <button class="btn back">Back</button>
+    </section>
+
+  </main>
+
+  <footer class="footer">Made by Shubhaam X MD</footer>
+
+  <!-- Hidden copy text for plugin links and panel code -->
+  <textarea id="hidden-copy" style="position:fixed;left:-9999px;top:-9999px" aria-hidden="true"></textarea>
+
+  <script>
+    // --- Configure Supabase ---
+    const SUPABASE_URL = 'https://YOUR_SUPABASE_URL.supabase.co' // replace
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY' // replace
+    const supabase = supabaseJs.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  </script>
+  <script src="assets/script.js"></script>
+
+</body>
+      </html>
